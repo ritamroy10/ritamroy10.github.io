@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ritam Roy | Junior AI Engineer & Data Scientist</title>
+  <meta name="description" content="Professional portfolio of Ritam Roy. Junior AI Engineer and Data Scientist specializing in Small Language Models (SLMs), RAG pipelines, predictive machine learning, and data analytics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="brand">
+        <span class="brand-avatar">RR</span>
+        <div class="brand-info">
+          <span class="brand-name">Ritam Roy</span>
+          <span class="brand-title">Junior AI Engineer</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="nav-item">About</a>
+        <a href="#experience" class="nav-item">Experience</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#tools" class="nav-item">Tools</a>
+        <a href="#education" class="nav-item">Education</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="Ritam_Roy_Resume.pdf" class="btn btn-resume" download="Ritam_Roy_Resume.pdf" title="Download Official PDF Resume">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Resume PDF</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="section-container hero-container">
+        <div class="hero-text-col">
+          <div class="recruiter-badge">
+            <span class="status-pulse"></span>
+            <span>Available for Full-Time Roles • AI & Data Science</span>
+          </div>
+
+          <h1 class="hero-name">
+            Ritam Roy
+          </h1>
+          <h2 class="hero-role">
+            Junior AI Engineer & Data Scientist
+          </h2>
+
+          <p class="hero-bio">
+            I specialize in building production <strong>Small Language Model (SLM)</strong> workflows, implementing <strong>Retrieval-Augmented Generation (RAG)</strong> pipelines, and developing predictive machine learning models that deliver real business impact. Currently engineering AI solutions at <strong>Arbood Consultancy</strong>; previously delivered data science & lead targeting models at <strong>T & D Enterprise and Engineers</strong>.
+          </p>
+
+          <!-- Core Competencies Chips -->
+          <div class="competencies-chips">
+            <span class="chip">Small Language Models (SLMs)</span>
+            <span class="chip">RAG Pipelines</span>
+            <span class="chip">Predictive ML</span>
+            <span class="chip">Lead Scoring</span>
+            <span class="chip">MS Excel & Spreadsheets</span>
+            <span class="chip">REST APIs</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="Ritam_Roy_Resume.pdf" class="btn btn-primary" download="Ritam_Roy_Resume.pdf">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Resume (Single Page PDF)</span>
+            </a>
+            <a href="mailto:ritamroy.work@gmail.com" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+          <!-- Quick contact row -->
+          <div class="contact-quickbar">
+            <a href="mailto:ritamroy.work@gmail.com" class="quick-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>ritamroy.work@gmail.com</span>
+            </a>
+            <a href="tel:+918282888740" class="quick-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+91-8282888740</span>
+            </a>
+            <span class="quick-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Kolkata, India</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- PROFILE PHOTO -->
+        <div class="hero-photo-col">
+          <div class="engineer-card">
+            <div class="photo-container">
+              <img src="ritam_avatar.jpg" alt="Ritam Roy - AI Engineer & Data Scientist" class="engineer-photo">
+            </div>
+            <div class="card-caption">
+              <div class="caption-title">Ritam Roy</div>
+              <div class="caption-sub">B.Tech CSE (2024) • Junior AI Engineer</div>
+              <div class="caption-status">
+                <span class="dot-green"></span> Ready for Next Opportunity
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="site-section" id="about">
+      <div class="section-container">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Professional Background</span>
+          <h2 class="section-heading">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-narrative">
+            <p>
+              I am a results-oriented Computer Science graduate with hands-on experience in <strong>Machine Learning</strong>, <strong>Data Science</strong>, and <strong>Business Analysis</strong>. Over the past year, I have transitioned from academic rigor into building real-world enterprise AI pipelines and business intelligence systems.
+            </p>
+            <p>
+              My day-to-day focus centers on <strong>Small Language Models (SLMs)</strong> and <strong>Retrieval-Augmented Generation (RAG)</strong> architectures—crafting cost-effective, private, and domain-grounded conversational systems. In previous data science work, I leveraged machine learning classification algorithms to solve high-stakes business challenges like <strong>lead conversion prediction</strong>, while building automated spreadsheets in <strong>MS Excel and Google Sheets</strong> to maintain operational transparency across teams.
+            </p>
+          </div>
+
+          <div class="key-facts-panel">
+            <h3 class="panel-title">Candidate Snapshot</h3>
+            <ul class="facts-list">
+              <li>
+                <span class="fact-label">Education:</span>
+                <span class="fact-value">B.Tech in Computer Science & Engineering (CGPA: 7.84)</span>
+              </li>
+              <li>
+                <span class="fact-label">Current Role:</span>
+                <span class="fact-value">Junior AI Engineer @ Arbood Consultancy</span>
+              </li>
+              <li>
+                <span class="fact-label">Previous Internship:</span>
+                <span class="fact-value">Data Science Intern @ T & D Enterprise and Engineers</span>
+              </li>
+              <li>
+                <span class="fact-label">Primary Languages:</span>
+                <span class="fact-value">Python (Pandas, NumPy, Scikit-learn, PyTorch)</span>
+              </li>
+              <li>
+                <span class="fact-label">Key ML Focus:</span>
+                <span class="fact-value">Supervised Classification, Feature Engineering, EDA, RAG</span>
+              </li>
+              <li>
+                <span class="fact-label">Business Tools:</span>
+                <span class="fact-value">MS Excel (Dashboards, VLOOKUP), Google Sheets</span>
+              </li>
+              <li>
+                <span class="fact-label">Work Authorization:</span>
+                <span class="fact-value">Available Immediately • Open to Remote & Relocation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & INTERNSHIP SECTION -->
+    <section class="site-section bg-alt" id="experience">
+      <div class="section-container">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Professional Track Record</span>
+          <h2 class="section-heading">Work Experience & Internship</h2>
+        </div>
+
+        <div class="experience-list">
+          <!-- Role 1: Arbood Consultancy -->
+          <article class="exp-card">
+            <div class="exp-header">
+              <div>
+                <span class="exp-type-badge fulltime">Full-Time Experience</span>
+                <h3 class="exp-role">Junior AI Engineer</h3>
+                <h4 class="exp-company">Arbood Consultancy Private Limited</h4>
+              </div>
+              <div class="exp-period">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>June 2026 – Present</span>
+              </div>
+            </div>
+
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>
+                  <strong>Small Language Models & RAG Architecture:</strong> Architecting and fine-tuning lightweight Small Language Models (SLMs) with Retrieval-Augmented Generation (RAG) pipelines for intelligent enterprise workflow automation and contextual question answering.
+                </li>
+                <li>
+                  <strong>Production AI Pipelines & REST APIs:</strong> Designing end-to-end AI workflows, integrating RESTful APIs for real-time model inference, and benchmarking evaluation metrics across specialized domain datasets.
+                </li>
+                <li>
+                  <strong>Inference & Resource Optimization:</strong> Optimizing model throughput, GPU memory footprint, and evaluation latency across cloud compute environments.
+                </li>
+              </ul>
+
+              <div class="exp-tags">
+                <span class="exp-tag">SLMs</span>
+                <span class="exp-tag">RAG</span>
+                <span class="exp-tag">Python</span>
+                <span class="exp-tag">Hugging Face</span>
+                <span class="exp-tag">REST APIs</span>
+                <span class="exp-tag">PyTorch</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Role 2: T & D Enterprise and Engineers -->
+          <article class="exp-card">
+            <div class="exp-header">
+              <div>
+                <span class="exp-type-badge intern">Internship Experience</span>
+                <h3 class="exp-role">Data Science Intern</h3>
+                <h4 class="exp-company">T & D Enterprise and Engineers</h4>
+              </div>
+              <div class="exp-period">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Dec 2025 – May 2026</span>
+              </div>
+            </div>
+
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>
+                  <strong>Predictive Lead Scoring with ML & AI:</strong> Engineered and deployed machine learning classification models to accurately identify, score, and target high-probability convertible leads, significantly accelerating sales conversion rates.
+                </li>
+                <li>
+                  <strong>Automated MS Excel & Spreadsheet Reporting:</strong> Designed, built, and maintained structured progress spreadsheets and dynamic dashboards in MS Excel and Google Sheets to provide leadership and cross-functional teams with crystal-clear visibility into project milestones, pipeline velocity, and KPIs.
+                </li>
+                <li>
+                  <strong>Exploratory Data Analysis (EDA) & Cleaning:</strong> Conducted in-depth exploratory data analysis and data preprocessing across multi-source client datasets, uncovering actionable trends and transforming messy records into strategic data assets.
+                </li>
+              </ul>
+
+              <div class="exp-tags">
+                <span class="exp-tag">Lead Scoring</span>
+                <span class="exp-tag">Machine Learning</span>
+                <span class="exp-tag">MS Excel</span>
+                <span class="exp-tag">Google Sheets</span>
+                <span class="exp-tag">EDA</span>
+                <span class="exp-tag">Scikit-learn</span>
+                <span class="exp-tag">Business Analysis</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="site-section" id="projects">
+      <div class="section-container">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Technical Portfolio</span>
+          <h2 class="section-heading">Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Rainfall Prediction -->
+          <div class="proj-card">
+            <div class="proj-top">
+              <span class="proj-badge">Supervised ML</span>
+              <span class="proj-metric">Accuracy: ~74%</span>
+            </div>
+            <h3 class="proj-title">Rainfall Prediction Using Machine Learning</h3>
+            <p class="proj-summary">
+              An end-to-end meteorological predictive model developed using historical weather time-series data to accurately forecast rainfall occurrence for risk assessment and resource planning.
+            </p>
+            <ul class="proj-bullets">
+              <li>Engineered feature extraction pipelines, handled missing value imputation, and addressed multicollinearity on meteorological data.</li>
+              <li>Evaluated multiple classification algorithms including Random Forest and Logistic Regression, achieving ~74% cross-validated accuracy.</li>
+              <li>Structured end-to-end model evaluation reports for feature importance interpretation.</li>
+            </ul>
+            <div class="proj-footer">
+              <div class="proj-stack">
+                <span>Python</span>
+                <span>Scikit-learn</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Random Forest</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>Code Repo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Chatbot Building Using SLM & RAG -->
+          <div class="proj-card featured">
+            <div class="proj-top">
+              <span class="proj-badge badge-accent">GenAI & SLMs</span>
+              <span class="proj-metric">Zero Hallucination Grounding</span>
+            </div>
+            <h3 class="proj-title">Chatbot Building Using SLM & RAG</h3>
+            <p class="proj-summary">
+              A contextual conversational assistant powered by open-source Small Language Models and Retrieval-Augmented Generation, engineered to answer domain queries with factual grounding.
+            </p>
+            <ul class="proj-bullets">
+              <li>Built an end-to-end RAG retrieval pipeline incorporating vector search and external REST APIs to fetch real-time facts and prevent hallucination.</li>
+              <li>Fine-tuned and benchmarked open-source SLMs from Hugging Face on RunPod cloud GPU instances, optimizing latency and throughput.</li>
+              <li>Curated and evaluated benchmark datasets from Kaggle to measure response relevance and accuracy.</li>
+            </ul>
+            <div class="proj-footer">
+              <div class="proj-stack">
+                <span>Hugging Face</span>
+                <span>RunPod GPU</span>
+                <span>PyTorch</span>
+                <span>RAG</span>
+                <span>REST APIs</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>Code Repo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS SECTION (Requested Tools with Real Brand Icons) -->
+    <section class="site-section bg-alt" id="tools">
+      <div class="section-container">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Technical Ecosystem</span>
+          <h2 class="section-heading">Tools & Platforms Mastered</h2>
+          <p class="section-desc">
+            Directly utilized in engineering workflows, data analysis, model fine-tuning, and team collaboration.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+          
+        <div class="tool-card" id="tool-sheets">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <path fill="#0F9D58" d="M30 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V14L30 4z"/>
+  <path fill="#87CEAC" d="M30 4v10h10L30 4z"/>
+  <path fill="#0B8043" opacity=".2" d="M30 14h10L30 4v10z"/>
+  <path fill="#fff" d="M14 20h20v18H14z"/>
+  <path fill="#0F9D58" d="M16 22h16v3H16zm0 5h16v3H16zm0 5h16v3H16zm6-10v13h-2V22h2zm6 0v13h-2V22h2z"/>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">Data & Analysis</span>
+              <span class="tool-exp">Advanced</span>
+            </div>
+          </div>
+          <h3 class="tool-name">Google Sheets</h3>
+          <p class="tool-desc">Cross-team milestone tracking, real-time collaboration spreadsheets, and automated progress reporting.</p>
+        </div>
+
+        <div class="tool-card" id="tool-excel">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <path fill="#107C41" d="M37 6H17a3 3 0 0 0-3 3v4h17a3 3 0 0 1 3 3v16h3a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3z"/>
+  <path fill="#1F9A55" d="M34 13H14a3 3 0 0 0-3 3v22a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V16a3 3 0 0 0-3-3z"/>
+  <path fill="#0C592C" opacity=".2" d="M34 13h-3v28h3a3 3 0 0 0 3-3V16a3 3 0 0 0-3-3z"/>
+  <path fill="#fff" opacity=".3" d="M19 18h12v3H19zm0 5h12v3H19zm0 5h12v3H19zm0 5h12v3H19z"/>
+  <path fill="#107C41" d="M22 13H6a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V16a3 3 0 0 0-3-3z"/>
+  <path fill="#fff" d="m9.2 30.6 3.6-6.4-3.4-6.2h3l1.9 4.1 2-4.1h2.9l-3.4 6.2 3.6 6.4h-3l-2.1-4.4-2.2 4.4z"/>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">Data & Analysis</span>
+              <span class="tool-exp">Advanced</span>
+            </div>
+          </div>
+          <h3 class="tool-name">Microsoft Excel</h3>
+          <p class="tool-desc">Complex formula logic, PivotTables, VLOOKUP/XLOOKUP, KPI dashboards, and progress reporting for teams.</p>
+        </div>
+
+        <div class="tool-card" id="tool-hugging_face">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <circle cx="24" cy="24" r="22" fill="#FFD21E"/>
+  <ellipse cx="16" cy="19" rx="3.2" ry="4.2" fill="#000"/>
+  <ellipse cx="32" cy="19" rx="3.2" ry="4.2" fill="#000"/>
+  <circle cx="15" cy="17.5" r="1.3" fill="#FFF"/>
+  <circle cx="31" cy="17.5" r="1.3" fill="#FFF"/>
+  <circle cx="10" cy="25" r="3.2" fill="#FF7F7F" opacity=".7"/>
+  <circle cx="38" cy="25" r="3.2" fill="#FF7F7F" opacity=".7"/>
+  <path d="M16 26c0 5 3.5 8 8 8s8-3 8-8" stroke="#000" stroke-width="2.5" stroke-linecap="round" fill="#D32F2F"/>
+  <path d="M5 32c2-4 8-3 10 2s-5 6-9 2z" fill="#FFA726" stroke="#000" stroke-width="1.2"/>
+  <path d="M43 32c-2-4-8-3-10 2s5 6 9 2z" fill="#FFA726" stroke="#000" stroke-width="1.2"/>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">AI & Transformers</span>
+              <span class="tool-exp">Production</span>
+            </div>
+          </div>
+          <h3 class="tool-name">Hugging Face</h3>
+          <p class="tool-desc">Open-source model exploration, Transformers library, SLM fine-tuning, and model evaluation benchmarks.</p>
+        </div>
+
+        <div class="tool-card" id="tool-colab">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <path fill="#E8710A" d="M15 16c-4.42 0-8 3.58-8 8s3.58 8 8 8c3.15 0 5.88-1.82 7.21-4.43-1.54-1.03-2.75-2.44-3.49-4.1-.66-1.47-2.08-2.47-3.72-2.47-2.21 0-4 1.79-4 4s1.79 4 4 4c1.14 0 2.13-.64 2.63-1.57.16.61.42 1.19.77 1.72-.82.53-1.81.85-2.8.85-2.21 0-4-1.79-4-4s1.79-4 4-4c1.79 0 3.28 1.19 3.78 2.82.72-1.77 2.02-3.27 3.67-4.3C21.07 16.98 18.18 16 15 16z"/>
+  <path fill="#F9AB00" d="M33 16c-3.18 0-6.07.98-7.45 2.52 1.65 1.03 2.95 2.53 3.67 4.3.5-1.63 1.99-2.82 3.78-2.82 2.21 0 4 1.79 4 4s-1.79 4-4 4c-.99 0-1.98-.32-2.8-.85.35-.53.61-1.11.77-1.72.5.93 1.49 1.57 2.63 1.57 2.21 0 4-1.79 4-4s-1.79-4-4-4c-1.64 0-3.06 1-3.72 2.47-.74 1.66-1.95 3.07-3.49 4.1C27.12 30.18 29.85 32 33 32c4.42 0 8-3.58 8-8s-3.58-8-8-8z"/>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">Cloud & Prototyping</span>
+              <span class="tool-exp">Proficient</span>
+            </div>
+          </div>
+          <h3 class="tool-name">Google Colab</h3>
+          <p class="tool-desc">Rapid machine learning prototyping, GPU-accelerated training, and exploratory data analysis (EDA).</p>
+        </div>
+
+        <div class="tool-card" id="tool-runpod">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="10" fill="#171520"/>
+  <path d="M24 7.5L39 16.2V33.6L24 42.3L9 33.6V16.2L24 7.5Z" fill="#6E3FF3"/>
+  <path d="M24 7.5L39 16.2L24 24.9L9 16.2L24 7.5Z" fill="#8855F9"/>
+  <path d="M9 16.2L24 24.9V42.3L9 33.6V16.2Z" fill="#5227CC"/>
+  <path d="M39 16.2L24 24.9V42.3L39 33.6V16.2Z" fill="#713CE8"/>
+  <circle cx="24" cy="24.9" r="4.5" fill="#FFFFFF"/>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">Cloud Infrastructure</span>
+              <span class="tool-exp">Production</span>
+            </div>
+          </div>
+          <h3 class="tool-name">RunPod GPU</h3>
+          <p class="tool-desc">Deploying low-latency SLM inference containers, managing GPU compute instances, and hosting model APIs.</p>
+        </div>
+
+        <div class="tool-card" id="tool-jupyter">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <path fill="#767677" d="M24 8C14.06 8 6 15.16 6 24s8.06 16 18 16 18-7.16 18-16S33.94 8 24 8zm0 29c-8.28 0-15-5.82-15-13s6.72-13 15-13 15 5.82 15 13-6.72 13-15 13z"/>
+  <circle cx="24" cy="6" r="3.5" fill="#F37626"/>
+  <circle cx="39" cy="14" r="2.5" fill="#F37626"/>
+  <circle cx="9" cy="34" r="2" fill="#F37626"/>
+  <path fill="#F37626" d="M12 24c0-6.63 5.37-12 12-12 4.2 0 7.87 2.17 9.96 5.44-1.56-.91-3.4-1.44-5.36-1.44-5.96 0-10.8 4.84-10.8 10.8 0 1.96.53 3.8 1.44 5.36C15.07 30.47 12 26.54 12 24z"/>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">Data Science</span>
+              <span class="tool-exp">Expert</span>
+            </div>
+          </div>
+          <h3 class="tool-name">Jupyter Notebook</h3>
+          <p class="tool-desc">Data cleaning with Pandas, statistical modeling, algorithmic experimentation, and Seaborn/Matplotlib visualization.</p>
+        </div>
+
+        <div class="tool-card" id="tool-codex">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="10" fill="#0A0E17"/>
+  <g transform="translate(10, 10) scale(0.58)">
+    <path fill="none" stroke="#10A37F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" d="M43.2 20.4C42.4 15.8 38.6 12.3 34 12.1C33.3 12.1 32.6 12.2 32 12.5C30.6 8.5 26.8 5.7 22.4 5.7C19.7 5.7 17.2 6.9 15.5 8.9C15 8.6 14.4 8.4 13.8 8.4C9.7 8.4 6.2 11.5 5.8 15.6C2.2 18.1 0.4 22.4 1.2 26.7C2 31.3 5.8 34.8 10.4 35C11.1 35 11.8 34.9 12.4 34.6C13.8 38.6 17.6 41.4 22 41.4C24.7 41.4 27.2 40.2 28.9 38.2C29.4 38.5 30 38.7 30.6 38.7C34.7 38.7 38.2 35.6 38.6 31.5C42.2 29 44 24.7 43.2 20.4Z"/>
+    <path fill="none" stroke="#10A37F" stroke-width="2.5" stroke-linecap="round" d="M22 17v13m-5-9 10 5m-10 0 10-5"/>
+  </g>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">AI Engineering</span>
+              <span class="tool-exp">Production</span>
+            </div>
+          </div>
+          <h3 class="tool-name">OpenAI Codex</h3>
+          <p class="tool-desc">AI-assisted code generation, algorithmic optimization, API schema design, and rapid test writing.</p>
+        </div>
+
+        <div class="tool-card" id="tool-antigravity">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="10" fill="#0A0E1A"/>
+  <path d="M24 7L38 15V33L24 41L10 33V15L24 7Z" stroke="#38BDF8" stroke-width="2.5" fill="#131B2E" fill-opacity="0.6"/>
+  <path d="M24 16L32 21V30L24 35L16 30V21L24 16Z" fill="#38BDF8" fill-opacity="0.3" stroke="#818CF8" stroke-width="1.8"/>
+  <line x1="24" y1="11" x2="24" y2="37" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+  <line x1="13" y1="24" x2="35" y2="24" stroke="#818CF8" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="3.5" fill="#38BDF8"/>
+  <circle cx="24" cy="24" r="1.8" fill="#FFFFFF"/>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">Development</span>
+              <span class="tool-exp">Daily Driver</span>
+            </div>
+          </div>
+          <h3 class="tool-name">Antigravity IDE</h3>
+          <p class="tool-desc">Agentic coding workspace, autonomous multi-tool reasoning, and rapid end-to-end full-stack prototyping.</p>
+        </div>
+
+        <div class="tool-card" id="tool-vscode">
+          <div class="tool-card-top">
+            <div class="tool-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <path fill="#0065A9" d="m34.7 4.2-12 11.2-6.5-5L11 12.6l4 3.7-4 3.7 5.2 2.2 6.5-5 12 11.2a2.8 2.8 0 0 0 4.7-2V6.2a2.8 2.8 0 0 0-4.7-2Z"/>
+  <path fill="#007ACC" d="M37.5 41.8a2.8 2.8 0 0 0 1.9-2.6V8.8a2.8 2.8 0 0 0-1.9-2.6l-14.8 13.9 14.8 21.7Z"/>
+  <path fill="#1F9CF0" d="M34.7 43.8a2.8 2.8 0 0 0 4.7-2V30.5L22.7 18.2l-6.5 5 18.5 20.6Z"/>
+  <path fill="#0065A9" d="M11 12.6v22.8l7.2-5.4L11 24V12.6Z"/>
+</svg>
+            </div>
+            <div class="tool-badges">
+              <span class="tool-cat">Development</span>
+              <span class="tool-exp">Daily Driver</span>
+            </div>
+          </div>
+          <h3 class="tool-name">VS Code</h3>
+          <p class="tool-desc">Core Python development, Git version control, environment management, and full-stack project building.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="site-section" id="education">
+      <div class="section-container">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Academic Qualifications</span>
+          <h2 class="section-heading">Education</h2>
+        </div>
+
+        <div class="edu-row-cards">
+          <!-- B.Tech -->
+          <div class="edu-item-card primary-edu">
+            <div class="edu-year">2020 – 2024</div>
+            <h3 class="edu-title">Bachelor of Technology (B.Tech)</h3>
+            <div class="edu-dept">Computer Science and Engineering</div>
+            <div class="edu-school">University of Engineering and Management, Kolkata</div>
+            <div class="edu-score-pill">
+              <span>CGPA: <strong>7.84 / 10</strong></span>
+            </div>
+          </div>
+
+          <!-- HS -->
+          <div class="edu-item-card">
+            <div class="edu-year">2020</div>
+            <h3 class="edu-title">Higher Secondary (Class XII)</h3>
+            <div class="edu-dept">Science Stream (WBCHSE)</div>
+            <div class="edu-school">Bidhannagar Government High School</div>
+            <div class="edu-score-pill">
+              <span>Score: <strong>70.20%</strong></span>
+            </div>
+          </div>
+
+          <!-- 10th -->
+          <div class="edu-item-card">
+            <div class="edu-year">2018</div>
+            <h3 class="edu-title">Secondary Examination (Class X)</h3>
+            <div class="edu-dept">General Curriculum (WBBSE)</div>
+            <div class="edu-school">Bidhannagar Government High School</div>
+            <div class="edu-score-pill">
+              <span>Score: <strong>78.00%</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECRUITER CONTACT & RESUME CTA -->
+    <section class="site-section bg-alt" id="contact">
+      <div class="section-container">
+        <div class="hiring-banner">
+          <div class="hiring-text">
+            <span class="section-kicker">Hiring & Opportunities</span>
+            <h2 class="hiring-headline">Interested in discussing an engineering role?</h2>
+            <p class="hiring-sub">
+              I am actively interviewing for <strong>Junior AI Engineer</strong>, <strong>Data Scientist</strong>, and <strong>Machine Learning Engineer</strong> positions. Let's connect!
+            </p>
+
+            <div class="direct-contact-grid">
+              <a href="mailto:ritamroy.work@gmail.com" class="direct-contact-box">
+                <div class="contact-box-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="box-lbl">Email Address</div>
+                  <div class="box-val">ritamroy.work@gmail.com</div>
+                </div>
+              </a>
+
+              <a href="tel:+918282888740" class="direct-contact-box">
+                <div class="contact-box-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <div class="box-lbl">Phone Number</div>
+                  <div class="box-val">+91-8282888740</div>
+                </div>
+              </a>
+
+              <div class="direct-contact-box">
+                <div class="contact-box-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="box-lbl">Location</div>
+                  <div class="box-val">Kolkata, West Bengal, India</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hiring-actions">
+              <a href="Ritam_Roy_Resume.pdf" class="btn btn-primary" download="Ritam_Roy_Resume.pdf">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Download Resume (Single Page PDF)</span>
+              </a>
+              <button class="btn btn-secondary" id="copyEmailBtn" data-email="ritamroy.work@gmail.com">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span id="copyBtnText">Copy Email Address</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>Ritam Roy</strong> &bull; Junior AI Engineer &amp; Data Scientist &bull; Kolkata, India
+      </div>
+      <div class="footer-right">
+        <a href="#home">Back to Top ↑</a>
+        <a href="Ritam_Roy_Resume.pdf" download="Ritam_Roy_Resume.pdf">Resume PDF</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

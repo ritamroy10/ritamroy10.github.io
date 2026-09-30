@@ -3,764 +3,620 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ritam Roy — AI Engineer & Data Scientist</title>
-  <meta name="description" content="Ritam Roy | Junior AI Engineer & Data Scientist specializing in Small Language Models, RAG pipelines, and predictive ML. Based in Kolkata, India.">
-  <meta name="keywords" content="Ritam Roy, AI Engineer, Data Scientist, SLMs, RAG, Machine Learning, Python, Kolkata">
-  <meta name="author" content="Ritam Roy">
-  <meta property="og:title" content="Ritam Roy — AI Engineer & Data Scientist">
-  <meta property="og:description" content="SLMs · RAG · Predictive ML · Based in Kolkata, India">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ritamroy10.github.io">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230a0f1e' stroke='%2300d4ff' stroke-width='4'/><text x='50%25' y='55%25' font-family='sans-serif' font-weight='800' font-size='40' fill='%2300d4ff' text-anchor='middle' dominant-baseline='middle'>RR</text></svg>">
+  <title>Ritam Roy — Creative AI Engineer & Data Scientist</title>
+  <meta name="description" content="Portfolio of Ritam Roy — Junior AI Engineer & Data Scientist specializing in Autonomous SLM Swarms, Enterprise RAG Systems, and Machine Learning.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Italiana&family=JetBrains+Mono:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loading-state">
 
-  <!-- Cursor follower -->
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
 
-  <!-- Canvas for particle system -->
-  <canvas id="particleCanvas"></canvas>
+  <!-- PRELOADER (Exact match to reel intro) -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-counter" id="preloaderCounter">0%</div>
+      <div class="preloader-spinner-wrap" id="preloaderSpinnerWrap">
+        <svg class="preloader-arc" viewBox="0 0 100 100">
+          <circle class="preloader-arc-bg" cx="50" cy="50" r="40"></circle>
+          <circle class="preloader-arc-progress" id="preloaderArc" cx="50" cy="50" r="40"></circle>
+        </svg>
+      </div>
+      <div class="preloader-greeting" id="preloaderGreeting">hello</div>
+    </div>
+  </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo">
-        <span class="logo-ring">RR</span>
-        <span class="logo-text">Ritam Roy</span>
-      </a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="Ritam_Roy_Resume.pdf" class="btn-resume" download>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Resume
+  <!-- FULLSCREEN HAMBURGER OVERLAY MENU -->
+  <div class="menu-overlay" id="menuOverlay">
+    <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">✕</button>
+    <div class="menu-content">
+      <nav class="menu-nav">
+        <a href="#hero" class="menu-link" data-text="HOME">HOME</a>
+        <a href="#about" class="menu-link" data-text="ABOUT">ABOUT</a>
+        <a href="#expertise" class="menu-link" data-text="EXPERTISE">EXPERTISE</a>
+        <a href="#work" class="menu-link" data-text="WORK">WORK</a>
+        <a href="./architecture/" class="menu-link" data-text="CYPHER AI">CYPHER AI</a>
+        <a href="#contact" class="menu-link" data-text="CONTACT">CONTACT</a>
+      </nav>
+      <div class="menu-footer">
+        <a href="Ritam_Roy_Resume.pdf" target="_blank" class="menu-resume-link">DOWNLOAD RESUME ↗</a>
+        <div class="menu-socials">
+          <a href="https://github.com/ritamroy10" target="_blank" rel="noopener">GITHUB</a>
+          <a href="https://www.linkedin.com/in/ritam-roy-70631b420/" target="_blank" rel="noopener">LINKEDIN</a>
+          <a href="mailto:ritamroy.work@gmail.com">EMAIL</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HERO SECTION (WARM LUXURY LIGHT THEME) ==================== -->
+  <header class="hero-section" id="hero">
+    <!-- Top Navigation Bar -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <!-- Handwritten signature logo -->
+        <a href="#hero" class="signature-logo" aria-label="Ritam Roy Home">
+          <span>ritam</span>
         </a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="#work" class="nav-link">WORK</a></li>
+          <li><a href="#about" class="nav-link">ABOUT</a></li>
+          <li><a href="./architecture/" class="nav-link">JOURNAL</a></li>
+          <li><a href="#expertise" class="nav-link">EXPERTISE</a></li>
+          <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <div class="hero-bg-image"></div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-      <!-- Status badge -->
-      <div class="status-badge reveal-up" data-delay="0">
-        <span class="pulse-dot"></span>
-        <span>Available · AI & Data Science Roles</span>
+    <!-- Hero Main Typography (Exact match to Frame 15/18) -->
+    <div class="hero-center">
+      <div class="kinetic-text-wrap">
+        <h1 class="kinetic-title">CREATIVE</h1>
+        <div class="kinetic-subtitle">DEVELOPER</div>
       </div>
 
-      <!-- Name -->
-      <h1 class="hero-name reveal-up" data-delay="100">
-        <span class="name-first">Ritam</span>
-        <span class="name-last">Roy</span>
-      </h1>
-
-      <!-- Title with typewriter -->
-      <div class="hero-title-wrap reveal-up" data-delay="200">
-        <span class="hero-title" id="typedTitle"></span>
-        <span class="cursor-blink">|</span>
+      <!-- Keywords Row -->
+      <div class="hero-keywords">
+        <span class="keyword">VISUALS</span>
+        <span class="dot">•</span>
+        <span class="keyword">CODE</span>
+        <span class="dot">•</span>
+        <span class="keyword">EXPERIENCE</span>
       </div>
 
-      <!-- Pills -->
-      <div class="hero-pills reveal-up" data-delay="300">
-        <span class="pill pill-cyan">SLMs</span>
-        <span class="pill pill-violet">RAG Pipelines</span>
-        <span class="pill pill-emerald">Predictive ML</span>
-        <span class="pill pill-orange">Python</span>
-      </div>
-
-      <!-- Bio -->
-      <p class="hero-bio reveal-up" data-delay="400">
-        I architect production-grade <strong>Small Language Model</strong> workflows and <strong>RAG pipelines</strong> that replace costly LLM APIs with private, domain-grounded intelligence. Currently building at <strong>Arbood Consultancy</strong>.
-      </p>
-
-      <!-- CTA -->
-      <div class="hero-cta reveal-up" data-delay="500">
-        <a href="#projects" class="btn-primary">
-          <span>Explore Work</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="#contact" class="btn-outline">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>Get in Touch</span>
-        </a>
-      </div>
-
-      <!-- Social quick links -->
-      <div class="hero-socials reveal-up" data-delay="600">
-        <a href="https://github.com/ritamroy10" target="_blank" rel="noopener" class="social-icon" title="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/ritam-roy-70631b420/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-        </a>
-        <a href="mailto:ritamroy.work@gmail.com" class="social-icon" title="Email">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
-        <span class="social-divider">|</span>
-        <span class="hero-location">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Kolkata, India
-        </span>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
-  <section class="stats-bar">
-    <div class="stats-inner">
-      <div class="stat-item reveal-up">
-        <div class="stat-val" data-count="2">0</div>
-        <div class="stat-lbl">Years Experience</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item reveal-up" data-delay="100">
-        <div class="stat-val">~74%</div>
-        <div class="stat-lbl">ML Model Accuracy</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item reveal-up" data-delay="200">
-        <div class="stat-val">0ms</div>
-        <div class="stat-lbl">Hallucination Rate</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item reveal-up" data-delay="300">
-        <div class="stat-val">3+</div>
-        <div class="stat-lbl">Production Projects</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item reveal-up" data-delay="400">
-        <div class="stat-val">7.84</div>
-        <div class="stat-lbl">B.Tech CGPA</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="section about-section" id="about">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-tag">Who I Am</span>
-        <h2 class="section-title">Engineering Philosophy</h2>
-        <p class="section-subtitle">Bridging cutting-edge AI with practical business intelligence</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-photo-col reveal-left">
-          <div class="photo-frame">
-            <img src="ritam_avatar.jpg" alt="Ritam Roy" class="about-photo">
-            <div class="photo-glow"></div>
-            <div class="photo-badge">
-              <span class="dot-active"></span>
-              <span>Open to Work</span>
-            </div>
-          </div>
-          <!-- Quick facts card -->
-          <div class="quick-facts glass-card">
-            <div class="fact-row">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>+91-9330050168</span>
-            </div>
-            <div class="fact-row">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>ritamroy.work@gmail.com</span>
-            </div>
-            <div class="fact-row">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Kolkata, India</span>
-            </div>
-          </div>
+      <!-- Scroll indicator -->
+      <a href="#about" class="scroll-explore" aria-label="Scroll to explore">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="scroll-mouse-icon">
+          <div class="scroll-wheel"></div>
         </div>
-
-        <div class="about-text-col reveal-right">
-          <p class="about-lead">
-            I'm a results-driven <strong>Computer Science graduate</strong> specializing in where <em>AI meets business value</em> — building production-ready systems that actually ship.
-          </p>
-          <p class="about-body">
-            My focus is on <strong>Small Language Models (SLMs)</strong> and <strong>RAG architectures</strong> — crafting cost-effective, privacy-first conversational systems without dependency on proprietary APIs. In previous roles, I applied ML classification to <strong>predictive lead scoring</strong> and built automated <strong>executive dashboards</strong> in Excel and Google Sheets.
-          </p>
-          <p class="about-body">
-            I thrive at the intersection of research and deployment — taking ideas from concept to cloud, with a focus on measurable outcomes.
-          </p>
-
-          <div class="pillars">
-            <div class="pillar glass-card">
-              <div class="pillar-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
-              </div>
-              <h4>Small Language Models</h4>
-              <p>Low-latency, privacy-first lightweight LMs for enterprise tasks</p>
-            </div>
-            <div class="pillar glass-card">
-              <div class="pillar-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              </div>
-              <h4>RAG Pipelines</h4>
-              <p>Semantic vector search with zero-hallucination factual grounding</p>
-            </div>
-            <div class="pillar glass-card">
-              <div class="pillar-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-              </div>
-              <h4>Predictive ML & Analytics</h4>
-              <p>Lead conversion models and automated executive dashboards</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE SECTION -->
-  <section class="section experience-section" id="experience">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-tag">Career</span>
-        <h2 class="section-title">Work Experience</h2>
-        <p class="section-subtitle">Production engineering across generative AI, ML, and business analytics</p>
-      </div>
-
-      <div class="timeline">
-        <!-- Arbood -->
-        <div class="timeline-item reveal-up">
-          <div class="timeline-dot current"></div>
-          <div class="timeline-line"></div>
-          <div class="timeline-card glass-card">
-            <div class="exp-header-row">
-              <div class="exp-meta">
-                <span class="exp-badge current-role">Current Role</span>
-                <span class="exp-period">June 2026 – Present</span>
-              </div>
-              <div class="exp-company-logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              </div>
-            </div>
-            <h3 class="exp-role">Junior AI Engineer</h3>
-            <h4 class="exp-company">Arbood Consultancy · Full-Time</h4>
-            <ul class="exp-bullets">
-              <li><strong>SLM & RAG Architecture:</strong> Architecting and fine-tuning lightweight Small Language Models with RAG pipelines for intelligent enterprise workflow automation and contextual Q&A.</li>
-              <li><strong>Production AI Pipelines:</strong> Designing end-to-end AI workflows, integrating RESTful APIs for real-time model inference, and benchmarking across specialized domain datasets.</li>
-              <li><strong>Inference Optimization:</strong> Optimizing model throughput, GPU memory footprint, and evaluation latency across RunPod cloud compute.</li>
-            </ul>
-            <div class="exp-impact">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Replaced costly 3rd-party LLM APIs with private SLM microservices · sub-50ms latency · 0% hallucination rate
-            </div>
-            <div class="exp-tags">
-              <span>SLMs</span><span>RAG</span><span>Python</span><span>Hugging Face</span><span>RunPod GPU</span><span>REST APIs</span><span>PyTorch</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- T&D -->
-        <div class="timeline-item reveal-up" data-delay="150">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass-card">
-            <div class="exp-header-row">
-              <div class="exp-meta">
-                <span class="exp-badge intern-role">Internship</span>
-                <span class="exp-period">Dec 2025 – May 2026</span>
-              </div>
-              <div class="exp-company-logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-              </div>
-            </div>
-            <h3 class="exp-role">Data Science Intern</h3>
-            <h4 class="exp-company">T & D Enterprise and Engineers · Internship</h4>
-            <ul class="exp-bullets">
-              <li><strong>Predictive Lead Scoring:</strong> Engineered and deployed ML classification models to identify and score high-probability convertible leads, accelerating sales conversion.</li>
-              <li><strong>Automated Excel Reporting:</strong> Built dynamic dashboards in MS Excel and Google Sheets providing leadership with real-time KPI visibility.</li>
-              <li><strong>Exploratory Data Analysis:</strong> Conducted in-depth EDA across multi-source client datasets, transforming raw records into strategic data assets.</li>
-            </ul>
-            <div class="exp-impact">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Increased lead qualification accuracy · Empowered non-technical leadership with automated daily KPI dashboards
-            </div>
-            <div class="exp-tags">
-              <span>Lead Scoring</span><span>Machine Learning</span><span>MS Excel</span><span>Google Sheets</span><span>EDA</span><span>Scikit-learn</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS SECTION -->
-  <section class="section projects-section" id="projects">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Production-grade AI engineering, from idea to deployment</p>
-      </div>
-
-      <!-- Filter -->
-      <div class="filter-row reveal-up" data-delay="100">
-        <button class="filter-pill active" data-cat="all">All</button>
-        <button class="filter-pill" data-cat="genai">GenAI & SLMs</button>
-        <button class="filter-pill" data-cat="ml">Machine Learning</button>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- CYPHER AI - Flagship -->
-        <div class="proj-card flagship-proj glass-card reveal-up" data-category="genai">
-          <div class="proj-card-inner">
-            <div class="proj-ribbon">★ Flagship</div>
-            <div class="proj-top-row">
-              <span class="proj-cat-badge genai-badge">Enterprise GenAI · SLM Swarm</span>
-              <span class="proj-metric">Sub-second · Air-gapped</span>
-            </div>
-            <h3 class="proj-name">CYPHER AI</h3>
-            <p class="proj-tagline">Autonomous Cybersecurity Intelligence & SLM Swarm</p>
-            <p class="proj-desc">
-              An endpoint-driven specialist SLM swarm architecture for enterprise cybersecurity operations. Coordinates autonomous models with sub-second execution, Qdrant vector memory, knowledge graphs, and RunPod GPU scaling.
-            </p>
-
-            <!-- Architecture flow -->
-            <div class="arch-flow">
-              <span class="arch-step">Security Event</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step active">Muse 30B Orchestrator</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step active">Specialist SLMs</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step active">Qdrant RAG</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step">Audit Report</span>
-            </div>
-
-            <div class="proj-highlights">
-              <div class="highlight-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Multi-SLM Swarm (4 specialist models)
-              </div>
-              <div class="highlight-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Sub-second Qdrant vector RAG
-              </div>
-              <div class="highlight-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                RunPod GPU (RTX 4090 / A100)
-              </div>
-              <div class="highlight-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Glassmorphic Executive UI
-              </div>
-            </div>
-
-            <div class="proj-stack-row">
-              <span>Multi-SLM</span><span>Qdrant</span><span>Knowledge Graph</span><span>FastAPI</span><span>PyTorch/CUDA</span>
-            </div>
-
-            <div class="proj-actions">
-              <a href="https://github.com/ritamroy10/ritamroy10.github.io/tree/main/architecture" target="_blank" rel="noopener" class="proj-btn primary-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                GitHub Repo
-              </a>
-              <a href="architecture/docs/architecture_workflow.html" target="_blank" rel="noopener" class="proj-btn outline-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                Architecture Diagram
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RAG Chatbot -->
-        <div class="proj-card glass-card reveal-up" data-delay="100" data-category="genai">
-          <div class="proj-card-inner">
-            <div class="proj-top-row">
-              <span class="proj-cat-badge genai-badge">GenAI & SLMs</span>
-              <span class="proj-metric">Zero Hallucination</span>
-            </div>
-            <h3 class="proj-name">RAG Chatbot</h3>
-            <p class="proj-tagline">Contextual Conversational AI using SLM & RAG</p>
-            <p class="proj-desc">
-              A domain-specific chatbot powered by open-source Small Language Models and Retrieval-Augmented Generation. Designed to answer queries with factual grounding via ChromaDB vector search.
-            </p>
-            <div class="arch-flow">
-              <span class="arch-step">User Prompt</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step active">ChromaDB Search</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step active">HF SLM</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step">Response</span>
-            </div>
-            <div class="proj-stack-row">
-              <span>Hugging Face</span><span>ChromaDB</span><span>RunPod</span><span>PyTorch</span><span>RAG</span>
-            </div>
-            <div class="proj-actions">
-              <a href="https://github.com/ritamroy10" target="_blank" rel="noopener" class="proj-btn primary-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                View Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Rainfall Prediction -->
-        <div class="proj-card glass-card reveal-up" data-delay="200" data-category="ml">
-          <div class="proj-card-inner">
-            <div class="proj-top-row">
-              <span class="proj-cat-badge ml-badge">Supervised ML</span>
-              <span class="proj-metric">~74% Accuracy</span>
-            </div>
-            <h3 class="proj-name">Rainfall Prediction</h3>
-            <p class="proj-tagline">Meteorological ML for Risk Assessment</p>
-            <p class="proj-desc">
-              End-to-end meteorological predictive model using historical weather time-series data to forecast rainfall occurrence for risk assessment and resource planning.
-            </p>
-            <div class="arch-flow">
-              <span class="arch-step">Weather Data</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step active">EDA & Imputation</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step active">Random Forest</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              <span class="arch-step">Forecast</span>
-            </div>
-            <div class="proj-stack-row">
-              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Random Forest</span>
-            </div>
-            <div class="proj-actions">
-              <a href="https://github.com/ritamroy10" target="_blank" rel="noopener" class="proj-btn primary-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                View Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION -->
-  <section class="section skills-section" id="skills">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-tag">Expertise</span>
-        <h2 class="section-title">Skills & Tools</h2>
-        <p class="section-subtitle">Technologies I use in production engineering workflows</p>
-      </div>
-
-      <div class="skills-grid">
-
-        <div class="skill-group glass-card reveal-up">
-          <div class="skill-group-header">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            <h3>AI & Machine Learning</h3>
-          </div>
-          <div class="skill-items">
-            <div class="skill-item"><span>Hugging Face Transformers</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-            <div class="skill-item"><span>PyTorch / CUDA</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-            <div class="skill-item"><span>Scikit-learn</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-            <div class="skill-item"><span>RAG / Vector DBs</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-            <div class="skill-item"><span>OpenAI / Codex APIs</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-          </div>
-        </div>
-
-        <div class="skill-group glass-card reveal-up" data-delay="100">
-          <div class="skill-group-header">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <h3>Languages & Dev</h3>
-          </div>
-          <div class="skill-items">
-            <div class="skill-item"><span>Python</span><div class="skill-bar"><div class="skill-fill violet" style="width:92%"></div></div></div>
-            <div class="skill-item"><span>SQL</span><div class="skill-bar"><div class="skill-fill violet" style="width:80%"></div></div></div>
-            <div class="skill-item"><span>HTML / CSS / JS</span><div class="skill-bar"><div class="skill-fill violet" style="width:78%"></div></div></div>
-            <div class="skill-item"><span>FastAPI / REST APIs</span><div class="skill-bar"><div class="skill-fill violet" style="width:85%"></div></div></div>
-            <div class="skill-item"><span>Git & GitHub</span><div class="skill-bar"><div class="skill-fill violet" style="width:82%"></div></div></div>
-          </div>
-        </div>
-
-        <div class="skill-group glass-card reveal-up" data-delay="200">
-          <div class="skill-group-header">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <h3>Data & Cloud Tools</h3>
-          </div>
-          <div class="skill-items">
-            <div class="skill-item"><span>MS Excel & Google Sheets</span><div class="skill-bar"><div class="skill-fill emerald" style="width:93%"></div></div></div>
-            <div class="skill-item"><span>Jupyter Notebook</span><div class="skill-bar"><div class="skill-fill emerald" style="width:90%"></div></div></div>
-            <div class="skill-item"><span>Pandas / NumPy</span><div class="skill-bar"><div class="skill-fill emerald" style="width:88%"></div></div></div>
-            <div class="skill-item"><span>RunPod GPU Cloud</span><div class="skill-bar"><div class="skill-fill emerald" style="width:82%"></div></div></div>
-            <div class="skill-item"><span>Google Colab</span><div class="skill-bar"><div class="skill-fill emerald" style="width:85%"></div></div></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Tools showcase -->
-      <div class="tools-showcase reveal-up" data-delay="150">
-        <div class="tool-badge-item">
-          <span class="tool-icon-badge">🤗</span>
-          <span>Hugging Face</span>
-        </div>
-        <div class="tool-badge-item">
-          <span class="tool-icon-badge">⚡</span>
-          <span>RunPod</span>
-        </div>
-        <div class="tool-badge-item">
-          <span class="tool-icon-badge">🐍</span>
-          <span>Python 3.11</span>
-        </div>
-        <div class="tool-badge-item">
-          <span class="tool-icon-badge">🔥</span>
-          <span>PyTorch</span>
-        </div>
-        <div class="tool-badge-item">
-          <span class="tool-icon-badge">📊</span>
-          <span>Jupyter</span>
-        </div>
-        <div class="tool-badge-item">
-          <span class="tool-icon-badge">🗃️</span>
-          <span>ChromaDB</span>
-        </div>
-        <div class="tool-badge-item">
-          <span class="tool-icon-badge">🎯</span>
-          <span>Qdrant</span>
-        </div>
-        <div class="tool-badge-item">
-          <span class="tool-icon-badge">💻</span>
-          <span>VS Code</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION SECTION -->
-  <section class="section education-section" id="education">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-tag">Academic</span>
-        <h2 class="section-title">Education</h2>
-        <p class="section-subtitle">Rigorous background in Computer Science and computational statistics</p>
-      </div>
-
-      <div class="edu-grid">
-        <div class="edu-card glass-card primary-edu reveal-up">
-          <div class="edu-year-badge primary">2020 – 2024</div>
-          <div class="edu-degree-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <h3 class="edu-degree">Bachelor of Technology (B.Tech)</h3>
-          <p class="edu-field">Computer Science and Engineering</p>
-          <p class="edu-school">University of Engineering and Management, Kolkata</p>
-          <div class="edu-score">CGPA: <strong>7.84 / 10</strong></div>
-        </div>
-
-        <div class="edu-card glass-card reveal-up" data-delay="100">
-          <div class="edu-year-badge">2020</div>
-          <div class="edu-degree-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </div>
-          <h3 class="edu-degree">Higher Secondary (Class XII)</h3>
-          <p class="edu-field">Science Stream (WBCHSE)</p>
-          <p class="edu-school">Bidhannagar Government High School</p>
-          <div class="edu-score">Score: <strong>70.20%</strong></div>
-        </div>
-
-        <div class="edu-card glass-card reveal-up" data-delay="200">
-          <div class="edu-year-badge">2018</div>
-          <div class="edu-degree-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3 class="edu-degree">Secondary Examination (Class X)</h3>
-          <p class="edu-field">General Curriculum (WBBSE)</p>
-          <p class="edu-school">Bidhannagar Government High School</p>
-          <div class="edu-score">Score: <strong>78.00%</strong></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="section contact-section" id="contact">
-    <div class="container">
-      <div class="section-header reveal-up">
-        <span class="section-tag">Let's Talk</span>
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Open to Junior AI Engineer, Data Scientist, and ML Engineer roles</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info reveal-left">
-          <h3 class="contact-heading">Available for Opportunities</h3>
-          <p class="contact-body">
-            I'm actively interviewing for roles in <strong>AI Engineering</strong>, <strong>Data Science</strong>, and <strong>ML Engineering</strong>. I bring production-grade AI pipeline experience and a strong foundation in business analytics. Let's connect!
-          </p>
-
-          <div class="contact-links">
-            <a href="mailto:ritamroy.work@gmail.com" class="contact-link-item">
-              <div class="contact-link-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <div class="link-label">Email</div>
-                <div class="link-val">ritamroy.work@gmail.com</div>
-              </div>
-            </a>
-            <a href="tel:+919330050168" class="contact-link-item">
-              <div class="contact-link-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div>
-                <div class="link-label">Phone</div>
-                <div class="link-val">+91-9330050168</div>
-              </div>
-            </a>
-            <a href="https://www.linkedin.com/in/ritam-roy-70631b420/" target="_blank" rel="noopener" class="contact-link-item">
-              <div class="contact-link-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-              </div>
-              <div>
-                <div class="link-label">LinkedIn</div>
-                <div class="link-val">ritam-roy-70631b420 ↗</div>
-              </div>
-            </a>
-            <a href="https://github.com/ritamroy10" target="_blank" rel="noopener" class="contact-link-item">
-              <div class="contact-link-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-              </div>
-              <div>
-                <div class="link-label">GitHub</div>
-                <div class="link-val">github.com/ritamroy10 ↗</div>
-              </div>
-            </a>
-            <div class="contact-link-item no-hover">
-              <div class="contact-link-icon location-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <div class="link-label">Location</div>
-                <div class="link-val">Kolkata, West Bengal, India</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-action-col reveal-right">
-          <!-- Quick contact card -->
-          <div class="hire-card glass-card">
-            <div class="hire-card-header">
-              <div class="hire-status">
-                <span class="pulse-dot"></span>
-                <span>Actively Interviewing</span>
-              </div>
-            </div>
-            <h3>Ready for Immediate Joining</h3>
-            <p>Looking for roles in:</p>
-            <div class="role-pills-grid">
-              <span class="role-pill" onclick="window.location.href='mailto:ritamroy.work@gmail.com?subject=Junior AI Engineer Role - Inquiry&body=Hi Ritam, I am reaching out regarding a Junior AI Engineer opportunity.'">Junior AI Engineer</span>
-              <span class="role-pill" onclick="window.location.href='mailto:ritamroy.work@gmail.com?subject=Data Scientist Role - Inquiry&body=Hi Ritam, I am reaching out regarding a Data Scientist opportunity.'">Data Scientist</span>
-              <span class="role-pill" onclick="window.location.href='mailto:ritamroy.work@gmail.com?subject=ML Engineer Role - Inquiry&body=Hi Ritam, I am reaching out regarding an ML Engineer opportunity.'">ML Engineer</span>
-            </div>
-            <div class="hire-ctas">
-              <a href="mailto:ritamroy.work@gmail.com" class="btn-primary full-width">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Send Email
-              </a>
-              <a href="Ritam_Roy_Resume.pdf" download class="btn-outline full-width">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download Resume
-              </a>
-            </div>
-          </div>
-
-          <!-- GitHub integration card -->
-          <div class="github-card glass-card reveal-up" data-delay="200">
-            <div class="github-card-header">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-              <div>
-                <div class="gh-repo-name">ritamroy10.github.io</div>
-                <div class="gh-repo-desc">This portfolio's source code</div>
-              </div>
-            </div>
-            <div class="gh-stats">
-              <div class="gh-stat">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Public Portfolio
-              </div>
-              <div class="gh-stat">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Live on GitHub Pages
-              </div>
-            </div>
-            <a href="https://github.com/ritamroy10/ritamroy10.github.io" target="_blank" rel="noopener" class="btn-outline full-width">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-              View Source on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <span class="footer-logo">RR</span>
-        <div>
-          <div class="footer-name">Ritam Roy</div>
-          <div class="footer-sub">Junior AI Engineer & Data Scientist · Kolkata, India</div>
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="Ritam_Roy_Resume.pdf" download>Resume</a>
-      </div>
-      <div class="footer-socials">
-        <a href="https://github.com/ritamroy10" target="_blank" rel="noopener" title="GitHub">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/ritam-roy-70631b420/" target="_blank" rel="noopener" title="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-        </a>
-        <a href="mailto:ritamroy.work@gmail.com" title="Email">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Ritam Roy. Built with 💙 and deployed on GitHub Pages.</p>
-      <a href="https://github.com/ritamroy10/ritamroy10.github.io" target="_blank" rel="noopener" class="footer-source-link">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-        Source on GitHub
       </a>
     </div>
-  </footer>
 
-  <!-- Back to top -->
-  <button class="back-top" id="backTop" aria-label="Back to top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
+    <!-- Hero Bottom Bar -->
+    <div class="hero-bottom-bar">
+      <div class="copyright-tag">
+        ©2026 <em>ritam</em>
+      </div>
 
+      <!-- Rotating Badge (Let's Work Together) -->
+      <a href="#contact" class="rotating-badge-wrap" aria-label="Work Together">
+        <div class="rotating-badge">
+          <svg viewBox="0 0 100 100" class="rotating-svg">
+            <path id="badgePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+            <text class="badge-text">
+              <textPath href="#badgePath" startOffset="0%">
+                LET'S WORK TOGETHER • LET'S WORK TOGETHER •
+              </textPath>
+            </text>
+          </svg>
+          <div class="badge-center-arrow">↗</div>
+        </div>
+        <div class="badge-location-text">BASED IN INDIA</div>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== CURVED TRANSITION DIVIDER ==================== -->
+  <div class="transition-curve-wrap">
+    <svg class="transition-curve-svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,0 C480,110 960,110 1440,0 L1440,120 L0,120 Z" fill="#070707"></path>
+    </svg>
+  </div>
+
+  <!-- ==================== DARK SECTION CONTAINER ==================== -->
+  <main class="dark-container">
+
+    <!-- ==================== SECTION 02: ABOUT ME ==================== -->
+    <section class="about-section" id="about">
+      <!-- Section Tag & Metallic Header -->
+      <div class="section-header-centered">
+        <div class="section-pill-tag">
+          <span class="tag-number">02</span>
+          <span class="tag-dash">——</span>
+          <span class="tag-title">THE PERSON BEHIND THE WORK</span>
+        </div>
+        <h2 class="section-big-title-metallic">ABOUT ME</h2>
+        <div class="golden-separator-line"></div>
+      </div>
+
+      <!-- About Layout Grid -->
+      <div class="about-grid">
+        <!-- Left: Portrait Photo Card -->
+        <div class="portrait-card-wrap">
+          <div class="portrait-card">
+            <img src="ritam_avatar.jpg" alt="Ritam Roy" class="portrait-image" loading="lazy">
+            <div class="portrait-vignette"></div>
+            <!-- Floating code badge (exact match to video) -->
+            <div class="portrait-badge">
+              <span class="badge-icon">&lt;/&gt;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bio & Metadata Grid -->
+        <div class="about-details">
+          <div class="who-am-i-tag">—— WHO AM I ?</div>
+          
+          <h3 class="about-headline">
+            I BUILD <span class="white-text">DIGITAL WORLDS WHERE</span> <span class="gold-accent-text">DESIGN MEETS CODE.</span>
+          </h3>
+
+          <!-- Two-column bio paragraph -->
+          <div class="about-bios-grid">
+            <p class="bio-text">
+              I'm <strong>Ritam Roy</strong> — a creative AI Engineer & Data Scientist at Arbood Consultancy, turning complex architectures, intelligent algorithms, and modern frontend motion into memorable digital experiences.
+            </p>
+            <p class="bio-text">
+              I care about the details most people don't notice: the latency of token streaming, the rhythm of typography, retrieval precision, and the tiny moments that make an intelligent product feel genuinely alive.
+            </p>
+          </div>
+
+          <!-- 3-Column Minimalist Metadata Grid (Exact Frame 50 match) -->
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <span class="meta-label">BASED</span>
+              <span class="meta-value">INDIA</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">FOCUS</span>
+              <span class="meta-value">AI / SLMs / MOTION</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">BUILDING WEBSITES</span>
+              <span class="meta-value">1ST YEAR</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">MINDSET</span>
+              <span class="meta-value">ALWAYS LEARNING</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">PROJECTS DONE</span>
+              <span class="meta-value">10+</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">EDUCATION</span>
+              <span class="meta-value">B.TECH CSE (UEM)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 03: MY EXPERTISE ==================== -->
+    <section class="expertise-section" id="expertise">
+      <div class="expertise-grid">
+        <!-- Left Column -->
+        <div class="expertise-left">
+          <div class="section-pill-tag">
+            <span class="tag-number">03</span>
+            <span class="tag-dash">——</span>
+            <span class="tag-title">EXPERTISE</span>
+          </div>
+
+          <h2 class="expertise-title">
+            <span class="title-outline">MY</span>
+            <span class="title-solid">EXPERTISE</span>
+          </h2>
+
+          <p class="expertise-subtitle">
+            I design and build digital experiences where <span class="gold-text">design, code and motion</span> work as one.
+          </p>
+
+          <p class="expertise-description">
+            From expressive interfaces to smooth interactions, I combine AI engineering with visual design to create digital experiences that feel intuitive, performant, and unforgettable.
+          </p>
+
+          <!-- Floating Tech Badges (GSAP, JS, React, HTML5) -->
+          <div class="tech-stack-chips">
+            <span class="tech-chip"><i class="chip-dot"></i> Python</span>
+            <span class="tech-chip"><i class="chip-dot"></i> GSAP & Motion</span>
+            <span class="tech-chip"><i class="chip-dot"></i> SLMs & LLMs</span>
+            <span class="tech-chip"><i class="chip-dot"></i> PyTorch</span>
+            <span class="tech-chip"><i class="chip-dot"></i> RAG & Vectors</span>
+            <span class="tech-chip"><i class="chip-dot"></i> JavaScript & CSS</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive List Rows -->
+        <div class="expertise-right">
+          <!-- Item 01 -->
+          <div class="expertise-row" data-preview="dev">
+            <div class="row-num">01</div>
+            <div class="row-icon-box">&lt;/&gt;</div>
+            <div class="row-content">
+              <span class="row-cat">01 / DEVELOPMENT</span>
+              <h3 class="row-title">Creative Development</h3>
+              <p class="row-desc">Building fast, responsive, and scalable interfaces with modern frontend technologies and clean modular architectures.</p>
+            </div>
+            <div class="row-arrow">↗</div>
+          </div>
+
+          <!-- Item 02 -->
+          <div class="expertise-row" data-preview="motion">
+            <div class="row-num">02</div>
+            <div class="row-icon-box">✦</div>
+            <div class="row-content">
+              <span class="row-cat">02 / MOTION</span>
+              <h3 class="row-title">Motion & Interaction</h3>
+              <p class="row-desc">Turning static interfaces into expressive experiences with meaningful motion, micro-interactions, and buttery smooth scrolling.</p>
+            </div>
+            <div class="row-arrow">↗</div>
+          </div>
+
+          <!-- Item 03 -->
+          <div class="expertise-row" data-preview="ai">
+            <div class="row-num">03</div>
+            <div class="row-icon-box">🧠</div>
+            <div class="row-content">
+              <span class="row-cat">03 / INTELLIGENCE</span>
+              <h3 class="row-title">AI & SLM Orchestration</h3>
+              <p class="row-desc">Autonomous multi-agent swarms, specialized reasoning nodes, and low-latency inference pipelines built for production workloads.</p>
+            </div>
+            <div class="row-arrow">↗</div>
+          </div>
+
+          <!-- Item 04 -->
+          <div class="expertise-row" data-preview="apps">
+            <div class="row-num">04</div>
+            <div class="row-icon-box">⚡</div>
+            <div class="row-content">
+              <span class="row-cat">04 / ARCHITECTURE</span>
+              <h3 class="row-title">Modern Web & Data Systems</h3>
+              <p class="row-desc">Developing interactive applications with component-based architecture, FastAPI microservices, and dynamic real-time data flows.</p>
+            </div>
+            <div class="row-arrow">↗</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Reaction Hover Preview (Exact match to video Frame 60/75) -->
+      <div class="floating-preview-card" id="floatingPreview">
+        <div class="preview-icons">
+          <span class="preview-btn">🤍</span>
+          <span class="preview-divider">→</span>
+          <span class="preview-btn active">💜</span>
+        </div>
+        <div class="preview-icons">
+          <span class="preview-btn">👍</span>
+          <span class="preview-divider">→</span>
+          <span class="preview-btn active">👍</span>
+        </div>
+        <div class="preview-pill-bar">
+          <span class="pill-slider"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MARQUEE TICKER BANNER ==================== -->
+    <div class="marquee-strip">
+      <div class="marquee-track">
+        <span>MOTION DESIGN</span>
+        <span class="star">✦</span>
+        <span>UI/UX</span>
+        <span class="star">✦</span>
+        <span>INTERACTIVE WEB</span>
+        <span class="star">✦</span>
+        <span>CREATIVE DEVELOPMENT</span>
+        <span class="star">✦</span>
+        <span>AUTONOMOUS SLMS</span>
+        <span class="star">✦</span>
+        <span>RAG PIPELINES</span>
+        <span class="star">✦</span>
+        <span>MOTION DESIGN</span>
+        <span class="star">✦</span>
+        <span>UI/UX</span>
+        <span class="star">✦</span>
+        <span>INTERACTIVE WEB</span>
+        <span class="star">✦</span>
+        <span>CREATIVE DEVELOPMENT</span>
+        <span class="star">✦</span>
+        <span>AUTONOMOUS SLMS</span>
+        <span class="star">✦</span>
+        <span>RAG PIPELINES</span>
+        <span class="star">✦</span>
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 04: FEATURED WORK ==================== -->
+    <section class="work-section" id="work">
+      <!-- Gigantic Liquid Golden WORK Header (Frame 85) -->
+      <div class="work-giant-header">
+        <h2 class="work-giant-title">WORK</h2>
+        <div class="work-subheading">MY WORK</div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-list">
+
+        <!-- Project 1: CYPHER AI -->
+        <article class="project-card">
+          <div class="project-backdrop" style="background-image: url('project_cypher.jpg');"></div>
+          <div class="project-overlay"></div>
+          
+          <div class="project-content">
+            <div class="project-meta-top">
+              <span class="project-category-tag">—— CYPHER • 01</span>
+              <span class="project-badge-secondary">SLM SWARM ARCHITECTURE</span>
+            </div>
+
+            <h3 class="project-title">Autonomous SLM Swarm Intelligence</h3>
+            
+            <p class="project-desc">
+              A high-concurrency multi-agent small language model orchestration framework running specialized reasoning nodes for autonomous task planning, code generation, and distributed decision-making.
+            </p>
+
+            <div class="project-tech-pills">
+              <span class="pill">Python</span>
+              <span class="pill">SLM Orchestration</span>
+              <span class="pill">PyTorch</span>
+              <span class="pill">FastAPI</span>
+              <span class="pill">GSAP</span>
+            </div>
+          </div>
+
+          <!-- Circular Live Demo Button (Exact match to video Frame 95) -->
+          <div class="project-action-wrap">
+            <a href="./architecture/" class="circular-action-btn" aria-label="View Cypher AI Architecture">
+              <div class="action-circle-badge">
+                <svg viewBox="0 0 100 100" class="rotating-svg">
+                  <path id="cypherPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                  <text class="badge-text">
+                    <textPath href="#cypherPath" startOffset="0%">
+                      • LIVE ARCHITECTURE • VIEW SYSTEM •
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-center-arrow">↗</div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: Enterprise RAG Chatbot -->
+        <article class="project-card">
+          <div class="project-backdrop" style="background-image: url('project_rag.jpg');"></div>
+          <div class="project-overlay"></div>
+          
+          <div class="project-content">
+            <div class="project-meta-top">
+              <span class="project-category-tag">—— RETRIEVAL • 02</span>
+              <span class="project-badge-secondary">VECTOR SEARCH ENGINE</span>
+            </div>
+
+            <h3 class="project-title">Context-Aware Knowledge Engine</h3>
+            
+            <p class="project-desc">
+              High-precision enterprise retrieval-augmented generation engine powered by dense vector embeddings, hybrid keyword search, semantic re-ranking, and hallucination-suppressed citation synthesis.
+            </p>
+
+            <div class="project-tech-pills">
+              <span class="pill">ChromaDB</span>
+              <span class="pill">HuggingFace</span>
+              <span class="pill">LangChain</span>
+              <span class="pill">Python</span>
+              <span class="pill">FastAPI</span>
+            </div>
+          </div>
+
+          <!-- Circular Code Button -->
+          <div class="project-action-wrap">
+            <a href="https://github.com/ritamroy10" target="_blank" rel="noopener" class="circular-action-btn" aria-label="View GitHub Repository">
+              <div class="action-circle-badge">
+                <svg viewBox="0 0 100 100" class="rotating-svg">
+                  <path id="ragPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                  <text class="badge-text">
+                    <textPath href="#ragPath" startOffset="0%">
+                      • GITHUB REPO • VIEW CODE •
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-center-arrow">↗</div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Rainfall Prediction ML -->
+        <article class="project-card">
+          <div class="project-backdrop" style="background-image: url('project_climate.jpg');"></div>
+          <div class="project-overlay"></div>
+          
+          <div class="project-content">
+            <div class="project-meta-top">
+              <span class="project-category-tag">—— CLIMATE ML • 03</span>
+              <span class="project-badge-secondary">DATA SCIENCE PIPELINE</span>
+            </div>
+
+            <h3 class="project-title">Predictive Climate Machine Learning</h3>
+            
+            <p class="project-desc">
+              End-to-end meteorological predictive model trained on extensive weather datasets, utilizing ensemble gradient boosting, cross-validation, and automated data preprocessing with high explainability.
+            </p>
+
+            <div class="project-tech-pills">
+              <span class="pill">Scikit-Learn</span>
+              <span class="pill">Pandas</span>
+              <span class="pill">NumPy</span>
+              <span class="pill">Jupyter</span>
+              <span class="pill">Seaborn</span>
+            </div>
+          </div>
+
+          <!-- Circular Code Button -->
+          <div class="project-action-wrap">
+            <a href="https://github.com/ritamroy10" target="_blank" rel="noopener" class="circular-action-btn" aria-label="View GitHub Repository">
+              <div class="action-circle-badge">
+                <svg viewBox="0 0 100 100" class="rotating-svg">
+                  <path id="climatePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                  <text class="badge-text">
+                    <textPath href="#climatePath" startOffset="0%">
+                      • GITHUB REPO • VIEW CODE •
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-center-arrow">↗</div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 05: CONTACT (EXACT MATCH TO FRAME 116/117) ==================== -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <!-- Left Column: Heading & Contact Links -->
+        <div class="contact-left">
+          <h2 class="contact-main-heading">
+            Let's create<br>
+            <span class="contact-script-word">something</span><br>
+            meaningful.
+          </h2>
+
+          <p class="contact-subtext">
+            Have a project in mind, an AI initiative, or simply want to talk about research? I'd love to hear from you.
+          </p>
+
+          <div class="contact-cards-list">
+            <!-- Card 1: Email me -->
+            <a href="mailto:ritamroy.work@gmail.com" class="contact-info-card">
+              <div class="card-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div class="card-text-group">
+                <span class="card-label">Email me</span>
+                <span class="card-val">ritamroy.work@gmail.com</span>
+              </div>
+              <div class="card-arrow">↗</div>
+            </a>
+
+            <!-- Card 2: LinkedIn -->
+            <a href="https://www.linkedin.com/in/ritam-roy-70631b420/" target="_blank" rel="noopener" class="contact-info-card">
+              <div class="card-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div class="card-text-group">
+                <span class="card-label">Connect</span>
+                <span class="card-val">LinkedIn</span>
+              </div>
+              <div class="card-arrow">↗</div>
+            </a>
+
+            <!-- Card 3: Based in -->
+            <div class="contact-info-card">
+              <div class="card-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="card-text-group">
+                <span class="card-label">Based in</span>
+                <span class="card-val">Kolkata, India</span>
+              </div>
+              <div class="card-arrow">↗</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Contact Form -->
+        <div class="contact-right">
+          <form class="contact-form-box" id="contactForm">
+            <div class="form-field">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" name="name" placeholder="Your name" required autocomplete="name">
+            </div>
+
+            <div class="form-field">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required autocomplete="email">
+            </div>
+
+            <div class="form-field">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span>Send Message ↗</span>
+            </button>
+
+            <!-- Form Status Feedback -->
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <div class="footer-signature">ritam</div>
+          <p>© 2026 Ritam Roy. Built from scratch with HTML, CSS, JavaScript & motion.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="Ritam_Roy_Resume.pdf" target="_blank">Resume PDF</a>
+          <a href="./architecture/">CYPHER AI Specs</a>
+          <a href="https://github.com/ritamroy10/ritamroy10.github.io" target="_blank" rel="noopener">GitHub Repository</a>
+          <a href="#hero" class="back-to-top">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

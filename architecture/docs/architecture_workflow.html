@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cybersecurity SLM Harness — Architecture Workflow</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #0d1b2d;
+      --panel-2: #10243a;
+      --text: #e8f0fb;
+      --muted: #a5bad2;
+      --line: #2d4c6d;
+      --cyan: #47d7ff;
+      --blue: #65a7ff;
+      --purple: #bb8cff;
+      --red: #ff718b;
+      --green: #58dfab;
+      --orange: #ffbf69;
+      --yellow: #f3db6f;
+      --shadow: 0 18px 42px rgba(0, 0, 0, .28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: radial-gradient(circle at 15% 0%, #123154 0, transparent 35%), var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      line-height: 1.45;
+    }
+    .wrap { width: min(1560px, calc(100% - 40px)); margin: 0 auto; padding: 30px 0 48px; }
+    header { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 22px; }
+    h1 { font-size: clamp(26px, 3vw, 44px); letter-spacing: -.035em; margin: 0 0 7px; }
+    .subtitle { color: var(--muted); max-width: 900px; font-size: 15px; }
+    .rule {
+      border: 1px solid rgba(71, 215, 255, .32); background: rgba(71, 215, 255, .09);
+      border-radius: 13px; padding: 11px 15px; min-width: 250px; color: #c6f4ff; font-size: 13px;
+    }
+    .rule strong { display: block; color: var(--cyan); font-size: 14px; margin-bottom: 3px; }
+    .card { background: linear-gradient(145deg, rgba(16, 36, 58, .9), rgba(9, 23, 39, .92)); border: 1px solid rgba(141, 178, 214, .19); border-radius: 18px; box-shadow: var(--shadow); }
+    .diagram-card { padding: 16px 16px 12px; overflow-x: auto; }
+    svg { display: block; width: 100%; min-width: 1160px; height: auto; }
+    .section-title { font-size: 18px; margin: 28px 0 12px; }
+    .steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 11px; }
+    .step { padding: 15px; min-height: 138px; }
+    .step-number { color: var(--cyan); font-weight: 800; font-size: 12px; letter-spacing: .08em; }
+    .step h3 { font-size: 15px; margin: 5px 0 6px; }
+    .step p { color: var(--muted); font-size: 13px; margin: 0; }
+    .routes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 11px; }
+    .route { padding: 14px; border-top: 3px solid var(--blue); }
+    .route.red { border-top-color: var(--red); }
+    .route.blue { border-top-color: var(--blue); }
+    .route.purple { border-top-color: var(--purple); }
+    .route.green { border-top-color: var(--green); }
+    .route.orange { border-top-color: var(--orange); }
+    .route h3 { margin: 0 0 5px; font-size: 14px; }
+    .route p { margin: 0; color: var(--muted); font-size: 12px; }
+    .model-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; }
+    .model-card { padding: 14px; min-height: 116px; border-left: 3px solid var(--purple); }
+    .model-card.red { border-left-color: var(--red); }
+    .model-card.blue { border-left-color: var(--blue); }
+    .model-card.green { border-left-color: var(--green); }
+    .model-card.orange { border-left-color: var(--orange); }
+    .model-card.gray { border-left-color: #8fa4bb; }
+    .model-card h3 { margin: 0 0 5px; font-size: 14px; }
+    .model-card p { margin: 0; color: var(--muted); font-size: 12px; }
+    .footnote { color: var(--muted); font-size: 12px; margin-top: 18px; }
+    @media (max-width: 1000px) {
+      header { display: block; }
+      .rule { margin-top: 15px; }
+      .steps, .routes, .model-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 24px, 1560px); padding-top: 20px; }
+      .steps, .routes, .model-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <h1>Cybersecurity SLM Harness</h1>
+        <div class="subtitle">Architecture and user-answer workflow. The 4-bit quantized handler (Q4_K_M) enriches context and routes each request to one specialist SLM, executing sequentially under 18.2 GB peak VRAM.</div>
+      </div>
+      <div class="rule"><strong>4-bit Quantization (Q4_K_M)</strong>-70% Memory Reduction • Peak VRAM: 18.2 GB (Single 24GB GPU) • 100% Reliable Schema Decoding</div>
+    </header>
+
+    <section class="card diagram-card" aria-label="Architecture diagram">
+      <svg viewBox="0 0 1540 930" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">Cybersecurity SLM architecture workflow</title>
+        <desc id="diagram-desc">A user prompt passes through an API, policy gate, context and RAG, Muse Glimmer handler, one selected specialist harness, tools and sandbox, evidence validation, response formatting, and finally back to the user. Memory and audit records are persisted before completion.</desc>
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7ea1c5" /></marker>
+          <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#47d7ff" /></marker>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <style>
+          .box { fill: #10243a; stroke: #3b5d80; stroke-width: 1.5; }
+          .store { fill: #0d2630; stroke: #319a9a; stroke-width: 1.5; }
+          .routeBox { fill: #241c3b; stroke: #a381df; stroke-width: 1.8; }
+          .redBox { fill: #321c2b; stroke: #ff718b; stroke-width: 1.5; }
+          .blueBox { fill: #162c48; stroke: #65a7ff; stroke-width: 1.5; }
+          .greenBox { fill: #12322d; stroke: #58dfab; stroke-width: 1.5; }
+          .orangeBox { fill: #34281c; stroke: #ffbf69; stroke-width: 1.5; }
+          .answerBox { fill: #173a36; stroke: #58dfab; stroke-width: 2; }
+          .label { fill: #e8f0fb; font: 700 15px Inter, sans-serif; text-anchor: middle; }
+          .small { fill: #a5bad2; font: 12px Inter, sans-serif; text-anchor: middle; }
+          .tiny { fill: #91abc5; font: 11px Inter, sans-serif; text-anchor: middle; }
+          .lane { fill: #9bb6d0; font: 700 12px Inter, sans-serif; letter-spacing: .12em; }
+          .line { fill: none; stroke: #7ea1c5; stroke-width: 2; marker-end: url(#arrow); }
+          .lineCyan { fill: none; stroke: #47d7ff; stroke-width: 2.5; marker-end: url(#arrowCyan); }
+          .dashed { fill: none; stroke: #60a5c9; stroke-width: 1.7; stroke-dasharray: 7 6; marker-end: url(#arrow); }
+        </style>
+
+        <!-- Main request lane -->
+        <text x="30" y="37" class="lane">REQUEST AND ROUTING</text>
+        <rect x="30" y="55" width="1580" height="260" rx="18" fill="rgba(8,18,32,.30)" stroke="rgba(111,151,190,.18)"/>
+
+        <rect class="box" x="55" y="145" width="150" height="72" rx="12"/>
+        <text class="label" x="130" y="173">User</text><text class="small" x="130" y="195">Chat UI / CLI / API</text>
+        <path class="lineCyan" d="M205 181 H235"/>
+
+        <rect class="box" x="235" y="145" width="150" height="72" rx="12"/>
+        <text class="label" x="310" y="173">FastAPI</text><text class="small" x="310" y="195">request + request_id</text>
+        <path class="line" d="M385 181 H415"/>
+
+        <rect class="box" x="415" y="145" width="150" height="72" rx="12"/>
+        <text class="label" x="490" y="173">Policy Gate</text><text class="small" x="490" y="195">identity + scope + risk</text>
+        <path class="line" d="M565 181 H595"/>
+
+        <rect class="box" x="595" y="145" width="170" height="72" rx="12"/>
+        <text class="label" x="680" y="173">Context + RAG</text><text class="small" x="680" y="195">retrieve bounded context</text>
+        <path class="line" d="M765 181 H795"/>
+
+        <rect class="routeBox" x="795" y="145" width="180" height="72" rx="12" filter="url(#glow)"/>
+        <text class="label" x="885" y="170">Muse Glimmer 30B</text><text class="small" x="885" y="188">Q4_K_M (18.2 GB, -70%)</text><text class="tiny" x="885" y="204">context enrich + routing</text>
+        <path class="lineCyan" d="M975 181 H1005"/>
+
+        <rect class="box" x="1005" y="145" width="190" height="72" rx="12"/>
+        <text class="label" x="1100" y="173">Route Validator</text><text class="small" x="1100" y="195">allowlist + confidence</text>
+        <text class="tiny" x="1100" y="236">Exactly one branch is selected</text>
+
+        <!-- specialist branches -->
+        <text x="30" y="350" class="lane">SPECIALIST SELECTION (SEQUENTIAL EXECUTION — PEAK VRAM: 18.2 GB)</text>
+        <rect x="30" y="365" width="1580" height="166" rx="18" fill="rgba(8,18,32,.30)" stroke="rgba(111,151,190,.18)"/>
+        <path class="line" d="M1100 217 V270 H185 V365"/>
+        <path class="line" d="M1100 217 V270 H485 V365"/>
+        <path class="line" d="M1100 217 V270 H1085 V365"/>
+        <path class="line" d="M1100 217 V270 H1385 V365"/>
+
+        <rect class="redBox" x="80" y="385" width="210" height="100" rx="12"/>
+        <text class="label" x="185" y="415">RED TEAM</text><text class="small" x="185" y="435">Drana-Infinity 7.6B</text><text class="tiny" x="185" y="453">Q4_K_M (4.7 GB, -69%)</text><text class="tiny" x="185" y="470">pentest + exploit paths</text>
+
+        <rect class="blueBox" x="380" y="385" width="210" height="100" rx="12"/>
+        <text class="label" x="485" y="415">BLUE TEAM</text><text class="small" x="485" y="435">HOLAS Defender 3.2B</text><text class="tiny" x="485" y="453">Q4_K_M (2.0 GB)</text><text class="tiny" x="485" y="470">defense + log triage</text>
+
+        <rect class="box" x="980" y="385" width="210" height="100" rx="12"/>
+        <text class="label" x="1085" y="415">CODE REVIEW (SAST)</text><text class="small" x="1085" y="435">Qwen3.5-9B Dev</text><text class="tiny" x="1085" y="453">Q4_K_M (5.6 GB, -69%)</text><text class="tiny" x="1085" y="470">OWASP + secure diffs</text>
+
+        <rect class="orangeBox" x="1280" y="385" width="210" height="100" rx="12"/>
+        <text class="label" x="1385" y="415">WEB RESEARCH</text><text class="small" x="1385" y="435">SearXNG Worker</text><text class="tiny" x="1385" y="453">zero VRAM overhead</text><text class="tiny" x="1385" y="470">live CVE intelligence</text>
+
+        <!-- execution and answer lane -->
+        <text x="30" y="570" class="lane">EXECUTION, VALIDATION, AND USER ANSWER</text>
+        <rect x="30" y="585" width="1580" height="195" rx="18" fill="rgba(8,18,32,.30)" stroke="rgba(111,151,190,.18)"/>
+
+        <path class="line" d="M185 485 V540 H190 V585"/>
+        <path class="line" d="M485 485 V540 H190 V585"/>
+        <path class="line" d="M1085 485 V540 H190 V585"/>
+        <path class="line" d="M1385 485 V540 H1060 V585"/>
+
+        <rect class="box" x="80" y="610" width="220" height="92" rx="12"/>
+        <text class="label" x="190" y="640">Specialist Harness</text><text class="small" x="190" y="663">prompt + schema + budgets</text><text class="tiny" x="190" y="683">same wrapper for every SLM</text>
+        <path class="line" d="M300 656 H335"/>
+
+        <rect class="box" x="335" y="610" width="190" height="92" rx="12"/>
+        <text class="label" x="430" y="640">Tool Broker</text><text class="small" x="430" y="663">capability permissions</text><text class="tiny" x="430" y="683">no arbitrary shell</text>
+        <path class="line" d="M525 656 H560"/>
+
+        <rect class="box" x="560" y="610" width="190" height="92" rx="12"/>
+        <text class="label" x="655" y="640">Sandbox</text><text class="small" x="655" y="663">rootless Docker + gVisor</text><text class="tiny" x="655" y="683">Firecracker for high risk</text>
+        <path class="line" d="M750 656 H785"/>
+
+        <rect class="box" x="785" y="610" width="190" height="92" rx="12"/>
+        <text class="label" x="880" y="640">Evidence Validator</text><text class="small" x="880" y="663">facts + tools + citations</text><text class="tiny" x="880" y="683">blocks unverified claims</text>
+        <path class="lineCyan" d="M975 656 H1010"/>
+
+        <rect class="answerBox" x="1010" y="610" width="190" height="92" rx="12" filter="url(#glow)"/>
+        <text class="label" x="1105" y="640">Response Formatter</text><text class="small" x="1105" y="663">answer + evidence + sources</text><text class="tiny" x="1105" y="683">safe, readable output</text>
+        <path class="lineCyan" d="M1200 656 H1235"/>
+
+        <rect class="answerBox" x="1235" y="610" width="190" height="92" rx="12" filter="url(#glow)"/>
+        <text class="label" x="1330" y="640">API Response</text><text class="small" x="1330" y="663">HTTP JSON / SSE / WebSocket</text><text class="tiny" x="1330" y="683">streams progress + final answer</text>
+        <path class="lineCyan" d="M1425 656 H1460"/>
+
+        <rect class="answerBox" x="1460" y="610" width="125" height="92" rx="12"/>
+        <text class="label" x="1522" y="640">User</text><text class="small" x="1522" y="663">sees final</text><text class="small" x="1522" y="682">answer</text>
+
+        <!-- storage lane -->
+        <text x="30" y="825" class="lane">MEMORY AND AUDIT (BEFORE COMPLETION)</text>
+        <path class="dashed" d="M1105 702 V805 H390 V850"/>
+        <path class="dashed" d="M1105 702 V805 H800 V850"/>
+        <path class="dashed" d="M1105 702 V805 H1210 V850"/>
+
+        <rect class="store" x="270" y="850" width="240" height="62" rx="12"/>
+        <text class="label" x="390" y="877">Graphiti + Neo4j</text><text class="small" x="390" y="898">facts, entities, relationships</text>
+        <rect class="store" x="680" y="850" width="240" height="62" rx="12"/>
+        <text class="label" x="800" y="877">Qdrant</text><text class="small" x="800" y="898">redacted searchable memory</text>
+        <rect class="store" x="1090" y="850" width="240" height="62" rx="12"/>
+        <text class="label" x="1210" y="877">PostgreSQL</text><text class="small" x="1210" y="898">permissions + audit trail</text>
+      </svg>
+    </section>
+
+    <h2 class="section-title">Cognitive Workflow: From 5/10 Raw Prompts to 10/10 Specialized Answers</h2>
+    <section class="steps">
+      <article class="card step"><div class="step-number">01 — INTERCEPT</div><h3>User sends raw prompt</h3><p>Raw prompts often lack context (scoring ~5/10). The API accepts the prompt and initiates the cognitive pipeline.</p></article>
+      <article class="card step"><div class="step-number">02 — ENRICH</div><h3>Meta Muse Glimmer Handler</h3><p>Quantized 30B (Q4_K_M, 18.2 GB, -70% VRAM) enriches the query with technical assumptions, domain taxonomies (MITRE/OWASP/CWE/NIST), and tactical guidance.</p></article>
+      <article class="card step"><div class="step-number">03 — ROUTE</div><h3>Specialist SLM Selection</h3><p>Routes to one of three specialist SLMs: Red Team, Blue Team, or Code Review. Sequential execution keeps model memory bounded by the largest loaded model.</p></article>
+      <article class="card step"><div class="step-number">04 — HARNESS</div><h3>Tailored AI Harness</h3><p>Role-specific hyperparameters, few-shot exemplars, tool execution broker, and auto-healing quality scorer run the model.</p></article>
+      <article class="card step"><div class="step-number">05 — VALIDATE</div><h3>10/10 Quality Scored Answer</h3><p>Output evaluated against a 10-point rubric (Precision, Structure, Remediation, Taxonomy) delivering 100% verified answers.</p></article>
+    </section>
+
+    <h2 class="section-title">The 3 Specialist SLM Harnesses (Quantized 4-Bit Profiles)</h2>
+    <section class="routes">
+      <article class="card route red"><h3>1. Red Teaming Harness</h3><p><strong>Drana-Infinity 7.6B (Q4_K_M, 4.7 GB)</strong>: MITRE ATT&CK mapping, authorized penetration testing, attack graph synthesis, and exploit path validation.</p></article>
+      <article class="card route blue"><h3>2. Blue Teaming Harness</h3><p><strong>HOLAS Defender 3.2B (Q4_K_M, 2.0 GB)</strong>: SOC alert triage, SIEM query formulation (Splunk/KQL/Sigma), IOC extraction, and NIST containment.</p></article>
+      <article class="card route green"><h3>3. Secure Code Review Harness</h3><p><strong>Qwen3.5-9B Abliterated (Q4_K_M, 5.6 GB)</strong>: SAST analysis, tainted source-to-sink data tracing, OWASP/CWE classification, and secure code diffs.</p></article>
+      <article class="card route orange"><h3>Web Research & OSINT Service</h3><p><strong>SearXNG Worker (0 GB VRAM)</strong>: Live threat intelligence feeds, zero-day advisories, and external web citations.</p></article>
+    </section>
+
+    <h2 class="section-title">Quantized SLM Registry (4-Bit Q4_K_M — Peak VRAM: 18.2 GB)</h2>
+    <section class="model-grid">
+      <article class="card model-card red"><h3>Drana-Infinity 7.6B</h3><p><strong>Q4_K_M: 4.7 GB (-69%)</strong><br />Red Team primary — ethical hacking, pentesting, exploit path analysis.</p></article>
+      <article class="card model-card blue"><h3>HOLAS Defender 3.2B</h3><p><strong>Q4_K_M: 2.0 GB (-69%)</strong><br />Blue Team specialist — threat detection, defensive triage, and multilingual SOC analysis.</p></article>
+      <article class="card model-card green"><h3>Qwen3.5-9B Abliterated</h3><p><strong>Q4_K_M: 5.6 GB (-69%)</strong><br />Code Review specialist — SAST vulnerability analysis and patch diffs.</p></article>
+      <article class="card model-card gray"><h3>Muse Glimmer 30B</h3><p><strong>Q4_K_M: 18.2 GB (-70%)</strong><br />Cognitive handler — context enrichment and routing. Single GPU feasible.</p></article>
+    </section>
+
+    <p class="footnote">Open this self-contained file directly in a browser. It does not require Mermaid, JavaScript, or an internet connection.</p>
+  </main>
+</body>
+</html>
